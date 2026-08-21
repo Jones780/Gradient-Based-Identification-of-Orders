@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the associated manuscript."
+title: "Noise-Robust Gradient-Based Identification of Fractional Orders via Operator Learning and Integral Reconstruction"
+authors:
+  - family-names: Yousefpur Azar
+    given-names: Yones
+  - family-names: Kheiri
+    given-names: Hossein
+year: 2026
+license: MIT

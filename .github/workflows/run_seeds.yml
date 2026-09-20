@@ -1,0 +1,38 @@
+name: Run seed sweep
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Verify structure
+        run: |
+          pwd
+          ls -la
+          ls -la src experiments train
+
+      - name: Run seed sweep
+        run: |
+          chmod +x run_all_seeds.sh
+          ./run_all_seeds.sh
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: seed-results
+          path: seed_results.txt
+          if-no-files-found: warn

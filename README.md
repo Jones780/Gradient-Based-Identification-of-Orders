@@ -33,13 +33,15 @@ pip install -r requirements.txt
 
 ## Training the surrogate
 
-Train a surrogate for one of the three systems with:
+Train a separate surrogate for each benchmark system with:
 
 ```bash
 python train/train_surrogates.py --system linear
 ```
 
 Available systems are `linear`, `polynomial`, and `brusselator`. The default protocol uses fractional orders `{0.25, 0.50, 0.75, 0.95}`, 100 trajectories per order, 5% relative Gaussian noise, and 150 training epochs.
+
+For each benchmark system, the 400 training trajectories therefore comprise 100 trajectories for each of the four training orders.
 
 ## Reproducing the main experiments
 
@@ -52,7 +54,15 @@ python experiments/run_ablation.py --checkpoint models/deeponet_linear.pt
 python experiments/loss_landscapes.py --checkpoint models/deeponet_linear.pt
 ```
 
-The scripts use deterministic seeds where applicable, but numerical output can still vary slightly with the PyTorch version, hardware, and numerical libraries.
+### Off-grid comparison
+
+The off-grid experiment compares projected-gradient refinement with fine-grid search using the **same noisy trajectory, the same DeepONet surrogate, and the same fractional-integral reconstruction objective** for both methods. The fine grid has `Δα = 0.001`.
+
+This pairing isolates the effect of continuous optimization from the choice of derivative surrogate or reconstruction target. A two-sided paired Wilcoxon signed-rank test is reported for the trial-level estimation errors.
+
+The script also writes the trial-level paired errors to `offgrid_paired_results.csv`.
+
+The experiments use deterministic seeds where applicable, but numerical output can still vary slightly with the PyTorch version, hardware, and numerical libraries.
 
 ## Reproducibility and checkpoints
 

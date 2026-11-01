@@ -18,6 +18,7 @@ def main():
     p.add_argument("--checkpoint", required=True)
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--repeats", type=int, default=10)
+    p.add_argument("--quadrature-rule", choices=("rectangular", "product"), default="rectangular")
     args = p.parse_args()
 
     set_seed(args.seed)
@@ -29,9 +30,9 @@ def main():
     errors = []
     for _ in range(args.repeats):
         ic = np.random.uniform(-2.0, 2.0, size=2)
-        est, _ = estimate_alpha_known_F(f, 0.85, 0.05, ic, model, device)
+        est, _ = estimate_alpha_known_F(f, 0.85, 0.05, ic, model, device, quadrature_rule=args.quadrature_rule)
         errors.append(abs(est - 0.85))
-    print(f"{args.system}: MAE={np.mean(errors):.4f} +- {np.std(errors):.4f}")
+    print(f"{args.system} ({args.quadrature_rule}): MAE={np.mean(errors):.4f} +- {np.std(errors):.4f}")
 
 
 if __name__ == "__main__":

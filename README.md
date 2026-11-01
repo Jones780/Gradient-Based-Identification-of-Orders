@@ -62,7 +62,7 @@ After training the corresponding checkpoint:
 python experiments/run_main_benchmarks.py --system linear --checkpoint models/deeponet_linear.pt --quadrature-rule product
 ```
 
-The default `--quadrature-rule` is `rectangular` for backward compatibility. Use `product` to select piecewise-constant product integration. The final five-seed/100-path experiment is documented in the results records; the binary checkpoints and raw Kaggle archives are preserved in the companion manuscript revision package rather than duplicated in Git history.
+The default `--quadrature-rule` is `rectangular` for backward compatibility. Use `product` to select piecewise-constant product integration. The CLI command above is a lightweight single-checkpoint repeat and does not, by itself, reproduce the paired five-seed/100-path benchmark. The final five-seed/100-path experiment is documented in the results records; binary checkpoints and raw Kaggle archives are preserved in the companion manuscript revision package rather than duplicated in Git history.
 
 ## Quadrature API
 

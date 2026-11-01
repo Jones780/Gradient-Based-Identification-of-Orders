@@ -51,5 +51,43 @@
     "quadrature": "product"
   },
   "checkpoint_policy": "Binary checkpoint archives are retained in the companion revision package, not committed to Git.",
-  "caveat": "Historical ten-path checkpoints and exact test paths were not recovered; earlier reported main-table values are superseded and not authenticated as outcomes under the observed-noisy-increment target."
+  "caveat": "Historical ten-path checkpoints and exact test paths were not recovered; earlier reported main-table values are superseded and not authenticated as outcomes under the observed-noisy-increment target.",
+  "linear_source_sha256": {
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/data.py": "ad961b74bd0a06db6899797a0b5189d05ecb59dcf6f39ca7e1063ab6aac7c7a0",
+    "src/fractional.py": "50984e186fbe68e2e276aa11887df6ecaa3aabc0d80ff8adfdd9168dadd07822",
+    "src/models.py": "808a9c02f729e7a9ee2dec70242cd44ec251a2f89610705f6c126b408a9cb1b1",
+    "src/solver.py": "9cce71a042e64f650a85df3f2b09c2debf122f32485c34cc9c2f264cbc5f3395",
+    "src/systems.py": "f8c18b2ba27a40e955e25376f7c45f92ea6daedb1d45585841e61f804056290b"
+  },
+  "nonlinear_source_sha256": {
+    "src/data.py": "ad961b74bd0a06db6899797a0b5189d05ecb59dcf6f39ca7e1063ab6aac7c7a0",
+    "src/fractional.py": "50984e186fbe68e2e276aa11887df6ecaa3aabc0d80ff8adfdd9168dadd07822",
+    "src/models.py": "808a9c02f729e7a9ee2dec70242cd44ec251a2f89610705f6c126b408a9cb1b1",
+    "src/solver.py": "9cce71a042e64f650a85df3f2b09c2debf122f32485c34cc9c2f264cbc5f3395",
+    "src/systems.py": "f8c18b2ba27a40e955e25376f7c45f92ea6daedb1d45585841e61f804056290b"
+  },
+  "checkpoint_sha256": {
+    "linear": {
+      "42": "ba6a4a3ea256a84f45d069d9014246891f44b38605daf177e9610f5bc751ff84",
+      "123": "0c7de9ff4c52533d9d9c0864e055502eda9d05bde5f07637e7b18b14f527f56c",
+      "456": "37a0cd62ee2f5f769e7bf09604a727607de41405b6d5c52861b39facdf57f976",
+      "789": "a82643dfb208a2eb26ce4be0d083639a81d0b9a88eb128be9c3412a55d61d6d1",
+      "2026": "09133f37e484421136de66bf7a5de694f792dca4745239793642ccb5c2fae351"
+    },
+    "nonlinear_polynomial": {
+      "42": "48f4f9470da618378cbaf34ed53dc99397d31f7ab61b729de1fb3d8d566d1940",
+      "123": "c235f7a91520ca06187aaf4fb78c6257e8314675b793476a290fd5106cf64815",
+      "456": "29e5ce49ed36666b51237f6212f70023b8ebe9d5fa0cd2ce76e8f2c13518fd94",
+      "789": "3f0be478e6bacc6db7e07401a9e1093c25da9494b639d342df5da62ef2296e70",
+      "2026": "ab0cabf617811fe25247f5cbac40155367d24753868c0f289255eb8eba51c0bb"
+    },
+    "fractional_brusselator": {
+      "42": "0a0e359df36e396593ce215ddd66d413355c3e6e249f339d356fe993d2533507",
+      "123": "074aefb7523b6ed1ba9b4139a1fc52bb21d3211b067e7405cae76ad6c821af93",
+      "456": "ebb85115674b3e6c24766e3cf87370970a2b682107df586542334b95df26ea62",
+      "789": "21ab3f018eb29685b623a0d054cf45038611b6675c475212b59f1e6e7638769d",
+      "2026": "85b35ee71c93c7c65b03e189c8d1dc815342c0a1acb244237531c3d9ad53bc1e"
+    }
+  }
 }
